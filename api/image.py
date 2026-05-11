@@ -4,4 +4,7 @@ app = Flask(__name__)
 
 @app.route('/api/image')
 def serve_image():
-    return redirect("https://i.im.ge/QMdVbq/token.png")
+    return redirect("https://i.im.ge/QMdVbq/token.png", code=302)
+
+if __name__ == "__main__":
+    app.run()
