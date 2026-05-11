@@ -211,7 +211,7 @@ def main():
                 print_pm = f"\nPayment Methods:\n```yaml\nAmount: {payment_methods}\nValid Methods: {valid} method(s)\nType: {type}\n```"
                 
                
-                image_url = "https://im.ge/i/QMdVvbq/delete/bPtgfCCYg4wfua39KCJh7A4NHJzsCBPf" 
+                image_url = "https://i.im.ge/QMdVbq/token.png" 
                
 
                 embed_user = {
